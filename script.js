@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
 
 //Select Elements
-    const addButton = document.getElementById('Add Task'); 
+    const addButton = document.getElementById('addButton'); 
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
 
@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function(){
     function addTask (){
         const taskText = taskInput.value.trim();
 
-        if (taskText === "" )
+        if (taskText === "")
             alert("Enter a task");
         return;
-}
+        }
     //Create <li>
     const li = document.createElement("li");
     li.textContent = taskText;
@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
     //When clicked remove this task
     removeBtn.onclick = function () {
-        tasklist.removeChild(li);
-    };
+        taskList.removeChild(li);
+         };
 
     //attach button to li then li to list
     li.appendChild(removeBtn);
@@ -44,5 +44,5 @@ document.addEventListener('DOMContentLoaded', function(){
             addTask();
         }
     });
-
+   addTask();
 });
