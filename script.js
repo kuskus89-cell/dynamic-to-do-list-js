@@ -21,12 +21,11 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 }
 
-    //Define addTask function
     //Function to add a task 
     function addTask(taskText = '', save = true){
         //if no task is provided,get it from input
-        if (taskText === ""){
-            const taskText = taskInput.value.trim();
+        if (taskText === ''){
+             taskText = taskInput.value.trim();
         }
         //validate input
         if (taskText === ""){
@@ -70,5 +69,4 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
    addTask();
-});
 });
