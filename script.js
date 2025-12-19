@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', function(){
         if (taskText === "")
             alert("Enter a task");
         return;
+        } else {
+            const li = document.createElement("li");
+    li.textContent = taskText;
         }
-    //Create <li>
+    
     const li = document.createElement("li");
     li.textContent = taskText;
     
