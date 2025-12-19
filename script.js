@@ -14,9 +14,6 @@ document.addEventListener('DOMContentLoaded', function(){
     storedTasks.forEach(taskText => addTask(taskText, false)); // 'false' indicates not to save again to Local Storage
  }
 
-// Adjust `addTask` to optionally save tasks to avoid duplication when loading from Local Storage
-function addTask(taskText, save = true) {
-    // If no task provided,get it from input
     if (save) {
         const storedTasks = JSON.parse(localStorage.getItem('tasks') || '[]');
         storedTasks.push(taskText);
@@ -25,14 +22,19 @@ function addTask(taskText, save = true) {
 }
 
     //Define addTask function
-    function addTask (){
-        const taskText = taskInput.value.trim();
-
-        if (taskText === "")
-            alert("Enter a task");
+    //Function to add a task 
+    function addTask(taskText = '', save = true){
+        //if no task is provided,get it from input
+        if (taskText === ""){
+            const taskText = taskInput.value.trim();
+        }
+        //validate input
+        if (taskText === ""){
+             alert("Enter a task");
         return;
-        } 
+        }
 
+        //create li elements
      const li = document.createElement("li");
     li.textContent = taskText;
         
